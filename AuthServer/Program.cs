@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
-
+app.Run("http://0.0.0.0:5000");
 builder.Services.AddDbContext<ToDoDbContext>(options =>
 options.UseMySql(builder.Configuration.GetConnectionString("ToDoDb"), 
     new MySqlServerVersion(new Version(8, 0, 41))));
