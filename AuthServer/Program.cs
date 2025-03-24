@@ -136,7 +136,7 @@ app.MapPut("/items/{id}", async (ToDoDbContext db, [FromBody] Item item, int id)
     Item? newItem = await db.Items.FirstOrDefaultAsync(item => item.Id == id);
     if (newItem != null)
     {
-        newItem.Iscomplete = item.Iscomplete;
+        newItem.IsComplete = item.IsComplete;
     }
     // Iscompleteעדכון שם ,ב 
 
@@ -162,7 +162,7 @@ app.MapPost("/post", async (HttpRequest request, ToDoDbContext db, Item item) =>
     var todoItem = new Item
     {
         Name = item.Name,
-        Iscomplete = item.Iscomplete
+        IsComplete = item.IsComplete
     };
 
     db.Items.Add(todoItem);
