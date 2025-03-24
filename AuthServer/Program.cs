@@ -82,7 +82,9 @@ app.MapPost("/post", async (HttpRequest request,ToDoDbContext db, Item item) =>
 
 
 app.MapControllers();
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
-// app.Run($"http://0.0.0.0:{port}");
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8000";
+app.Run($"http://0.0.0.0:{port}");
 // app.Run($"http://localhost:{port}");
-app.Run();
+// app.Run($"http://0.0.0.0:{port}");
+
+// app.Run();
