@@ -8,7 +8,7 @@ ENV ASPNETCORE_URLS=http://+:80
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG configuration=Release
 WORKDIR /src
-COPY ["AuthServer/AuthServer.csproj", "AuthServer/"] # עדכן את הנתיב אם צריך
+COPY ["AuthServer/AuthServer.csproj", "AuthServer/"] # ודא שהנתיב נכון
 RUN dotnet restore "AuthServer/AuthServer.csproj"
 COPY . . # מעתיק את כל הקבצים לתוך הקונטיינר
 WORKDIR "/src/AuthServer" # נכנס לתיקיית האפליקציה
@@ -20,4 +20,4 @@ RUN dotnet publish "AuthServer.csproj" -c $configuration -o /app/publish /p:UseA
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "AuthServer.dll"] # עדכן את השם אם צריך
+ENTRYPOINT ["dotnet", "AuthServer.dll"] # ודא שהשם נכון
