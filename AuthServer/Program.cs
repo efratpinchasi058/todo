@@ -171,6 +171,6 @@ app.MapDelete("/delete/{id}", async (ToDoDbContext db, int id) =>
     return Results.NotFound();
 });
 
-// הגדרת הפורט של האפליקציה
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5069";
-app.Run($"http://0.0.0.0:{port}");
+// // הגדרת הפורט של האפליקציה
+// var port = Environment.GetEnvironmentVariable("PORT") ?? "5069";
+// app.Run($"http://0.0.0.0:{port}");
